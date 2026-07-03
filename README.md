@@ -36,13 +36,14 @@ vidhi-regtech-engine/
 
 ## Local setup
 
-Prereqs: Node 20+, Docker, a Groq API key.
+Prereqs: Node 20+, a local Postgres instance, and a Groq API key.
+
+Development uses local Postgres. Use Neon when you move to deployment.
 
 ```bash
 cp .env.example .env
-# fill in GROQ_API_KEY
+# fill in DATABASE_URL and GROQ_API_KEY
 
-docker compose up -d          # postgres+pgvector, redis
 psql "$DATABASE_URL" -f db/schema.sql
 
 cd apps/web && npm install && npm run dev
