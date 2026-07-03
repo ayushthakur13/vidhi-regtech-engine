@@ -1,0 +1,15 @@
+{
+  "name": "vidhi-regtech-engine",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Grounded regulatory obligation extraction and compliance tracking for SEBI intermediaries.",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=apps/web",
+    "db:migrate": "psql \"$DATABASE_URL\" -f db/schema.sql"
+  },
+  "license": "MIT"
+}
